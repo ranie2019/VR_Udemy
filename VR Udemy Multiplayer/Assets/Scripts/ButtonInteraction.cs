@@ -7,6 +7,6 @@ public class ButtonInteraction : MonoBehaviour
 
     public void OnButtonPressed()
     {
-        Debug.Log("botao precionado");
+        Debug.Log("Botao Pressionado");
     }
 }
