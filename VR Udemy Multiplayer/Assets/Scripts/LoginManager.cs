@@ -43,7 +43,7 @@ public class LoginManager : MonoBehaviourPunCallbacks
     #region Photon Callback Methods
     public override void OnConnected()
     {
-        Debug.Log("Conectado e ligando. O servidor esta abilitado");
+        Debug.Log("Conectado e ligando. O servidor esta Habilitado ");
     }
 
     public override void OnConnectedToMaster()
