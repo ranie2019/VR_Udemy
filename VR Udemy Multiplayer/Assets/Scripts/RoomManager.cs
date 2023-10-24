@@ -10,7 +10,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     // Update is called once per frame
@@ -63,6 +63,17 @@ public class RoomManager : MonoBehaviourPunCallbacks
             if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(MultiplayerVRConstants.MAP_TYPE_KEY, out mapType))
             {
                 Debug.Log("Entrou na Sala Com o Mapa: " + (string)mapType);
+                if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_SCHOOL)
+                {
+                    // carega a cena da escola
+                    PhotonNetwork.LoadLevel("World_School");
+                }
+                else if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_OUTDOOR)
+                {
+                    // carega a cena do ar live
+                    PhotonNetwork.LoadLevel("World_Outdoor");
+                }
+
             }
         }
     }
