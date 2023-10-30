@@ -16,6 +16,15 @@ public class RoomManager : MonoBehaviourPunCallbacks
     void Start()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
+
+        if (PhotonNetwork.IsConnectedAndReady)
+        {
+            PhotonNetwork.ConnectUsingSettings();
+        }
+        else
+        {
+            PhotonNetwork.JoinLobby();
+        }
     }
 
     // Update is called once per frame
@@ -51,6 +60,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         Debug.Log(message);
         CreatedAndJoinRoom();
+    }
+
+    public override void OnConnectedToMaster()
+    {
+        Debug.Log("Agora Esta Conectado ao Servidor. ");
+        PhotonNetwork.JoinLobby();
     }
 
     public override void OnCreatedRoom()
@@ -121,7 +136,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     }
     #endregion
 
-    #region
+    #region Private Methods
     private void CreatedAndJoinRoom()
     {
         string randomRoonName = "Sala_" + mapType + Random.Range(0, 10000);
