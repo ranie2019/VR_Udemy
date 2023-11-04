@@ -6,8 +6,12 @@ using Photon.Realtime;
 
 public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
 {
+    private const bool V = false;
     PhotonView m_photonView;
 
+    Rigidbody rb;
+
+    bool isBeingHeld = false;
     private void Awake()
     {
         m_photonView = GetComponent<PhotonView>();
@@ -15,13 +19,7 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        m_photonView = GetComponent<PhotonView>();
     }
 
     private void TransferOwnership()
@@ -31,17 +29,33 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
 
     public void OnSelectEnter()
     {
-        Debug.Log("Agarrado");
-        TransferOwnership();
+        Debug.Log("Pego");
+        m_photonView.RPC("StartNetworkGrabbing", RpcTarget.AllBuffered);
+
+        if (m_photonView.Owner == PhotonNetwork.LocalPlayer)
+        {
+            Debug.Log("Objeto Livre. É Meu");
+        }
+        else
+        {
+            TransferOwnership();
+        }
+        
     }
 
     public void OnSelectExited()
     {
-        Debug.Log("Largou");
+        Debug.Log("Solto");
+        m_photonView.RPC("StopNetworkGrabbing", RpcTarget.AllBuffered);
     }
 
     public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
     {
+        if (targetView != m_photonView)
+        {
+            return;
+        }
+
         Debug.Log("Propriedade Solicitada Para: " + targetView.name + "De" + requestingPlayer.NickName);
         m_photonView.TransferOwnership(requestingPlayer);
     }
@@ -54,5 +68,17 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     public void OnOwnershipTransferFailed(PhotonView targetView, Player senderOfFailedRequest)
     {
         
+    }
+
+    [PunRPC]
+    public void StartNetworkGrabbing()
+    {
+        isBeingHeld = true;
+    }
+
+    [PunRPC]
+    public void StopNetworkGrabbing()
+    {
+        isBeingHeld = false;
     }
 }

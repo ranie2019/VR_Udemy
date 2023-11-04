@@ -12,12 +12,12 @@ TagManager:
   - 
   - Water
   - UI
-  - AvatarHead
-  - AvatarBody
+  - LocalAvatarHead
+  - LocalAvatarBody
   - Teleport
   - Interactable
   - Player
-  - 
+  - InHand
   - 
   - 
   - 
