@@ -1588,31 +1588,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8738650270694400280, guid: 47133d67b3a40f04eb97e5089982ea39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.005093873
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8738650270694400280, guid: 47133d67b3a40f04eb97e5089982ea39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.8726008
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8738650270694400280, guid: 47133d67b3a40f04eb97e5089982ea39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.8006197
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8738650270694400280, guid: 47133d67b3a40f04eb97e5089982ea39, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8738650270694400280, guid: 47133d67b3a40f04eb97e5089982ea39, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8738650270694400280, guid: 47133d67b3a40f04eb97e5089982ea39, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8738650270694400280, guid: 47133d67b3a40f04eb97e5089982ea39, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8738650270694400280, guid: 47133d67b3a40f04eb97e5089982ea39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3211,7 +3211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4769427123665324672, guid: 43be1c43d5fc9f448a974c20312e9e2d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5642950047324513197, guid: 43be1c43d5fc9f448a974c20312e9e2d, type: 3}
       propertyPath: m_PresetInfoIsWorld
