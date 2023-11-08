@@ -1123,7 +1123,7 @@ namespace Photon.Pun
         {
             if (PhotonServerSettings == null)
             {
-                Debug.LogError("Can't connect: Loading settings failed. ServerSettings asset must be in any 'Resources' folder as: " + ServerSettingsFileName);
+                Debug.LogError("Não é possível conectar: falha no carregamento das configurações. O ativo ServerSettings deve estar em qualquer pasta 'Recursos' como: " + ServerSettingsFileName);
                 return false;
             }
 
@@ -1134,17 +1134,17 @@ namespace Photon.Pun
         {
             if (NetworkingClient.LoadBalancingPeer.PeerState != PeerStateValue.Disconnected)
             {
-                Debug.LogWarning("ConnectUsingSettings() failed. Can only connect while in state 'Disconnected'. Current state: " + NetworkingClient.LoadBalancingPeer.PeerState);
+                Debug.LogWarning("ConnectUsingSettings() falha. Só é possível conectar enquanto estiver no estado 'Desconectado'. Estado atual:" + NetworkingClient.LoadBalancingPeer.PeerState);
                 return false;
             }
             if (PhotonHandler.AppQuits)
             {
-                Debug.LogWarning("Can't connect: Application is closing. Unity called OnApplicationQuit().");
+                Debug.LogWarning("Não é possível conectar: o aplicativo está fechando. Unity chamando OnApplicationQuit().");
                 return false;
             }
             if (PhotonServerSettings == null)
             {
-                Debug.LogError("Can't connect: Loading settings failed. ServerSettings asset must be in any 'Resources' folder as: " + ServerSettingsFileName);
+                Debug.LogError("Não é possível conectar: falha ao carregar as configurações. O ativo ServerSettings deve estar em qualquer pasta 'Recursos' como: " + ServerSettingsFileName);
                 return false;
             }
 
@@ -1173,7 +1173,7 @@ namespace Photon.Pun
             {
                 OfflineMode = false; // Cleanup offline mode
                 // someone can set OfflineMode in code and then call ConnectUsingSettings() with non-offline settings. Warning for that case:
-                Debug.LogWarning("ConnectUsingSettings() disabled the offline mode. No longer offline.");
+                Debug.LogWarning("ConnectUsingSettings() desativou o modo offline. Não está mais offline.");
             }
 
 
