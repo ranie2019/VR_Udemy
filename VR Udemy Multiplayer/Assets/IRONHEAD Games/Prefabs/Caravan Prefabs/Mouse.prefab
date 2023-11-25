@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 2840671691785227881}
   - component: {fileID: 7066909718673299806}
   - component: {fileID: 3950222484702932062}
-  - component: {fileID: 5131899634460674007}
   - component: {fileID: 2926175623244581928}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Mouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,27 +113,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &5131899634460674007
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1218838477687311357}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.15423591, y: 0.05379099, z: 0.2485731}
-  m_Center: {x: 0.000006787479, y: 0.0062342044, z: 0.013694793}
 --- !u!114 &2926175623244581928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,7 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5849794940146611264}
   - component: {fileID: 4911183814824362483}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
